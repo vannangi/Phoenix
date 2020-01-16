@@ -1,0 +1,37 @@
+
+<!-- Jumbotron Header -->
+<header class="jumbotron my-4">
+  <h4 class="display-5">Names [ Total Records : <%= number_formatter(@page.total_entries) %> ]</h4>
+  <p class="lead">This page will show information for all the Names as cards. Each card will display
+  their name, primary profession, Known for the titles</p>
+</header>
+
+<!-- Page Features -->
+<div class="row text-center">
+
+  <%= for name <- @names do %>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h4 class="card-title"><%= link name.primaryname, to: Routes.name_path(@conn, :show, name) %></h4>
+        <h6 class="card-title"> Professions :</h6>
+        <p class="card-text">[<%= name.primaryprofession %>]</p>
+        <h6 class="card-title"> Known for :</h6>
+        <p class="card-text"> [<%= name.knownfortitles %> ] </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+<!-- /.row -->
+<center>
+<%= if @page.page_number > 1 do %>
+  <%= link "Prev Page", to: Routes.name_path(@conn, :index, page: @page.page_number - 1) %>
+<% end %>
+<%= if @page.page_number < @page.total_pages do %>
+  <%= link "Next Page", to: Routes.name_path(@conn, :index, page: @page.page_number + 1) %>
+<% end %>
+</center>
+<hr/><br/>

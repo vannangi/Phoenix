@@ -1,0 +1,53 @@
+<h1>Show Title</h1>
+
+<ul>
+
+  <li>
+    <strong>Tconst:</strong>
+    <%= @title.tconst %>
+  </li>
+
+  <li>
+    <strong>Titletype:</strong>
+    <%= @title.titletype %>
+  </li>
+
+  <li>
+    <strong>Primarytitle:</strong>
+    <%= @title.primarytitle %>
+  </li>
+
+  <li>
+    <strong>Originaltitle:</strong>
+    <%= @title.originaltitle %>
+  </li>
+
+  <li>
+    <strong>Isadult:</strong>
+    <%= @title.isadult %>
+  </li>
+
+  <li>
+    <strong>Startyear:</strong>
+    <%= @title.startyear %>
+  </li>
+
+  <li>
+    <strong>Endyear:</strong>
+    <%= @title.endyear %>
+  </li>
+
+  <li>
+    <strong>Runtimes:</strong>
+    <%= @title.runtimeminutes %>
+  </li>
+
+  <li>
+    <strong>Genres:</strong>
+    <%= @title.genres %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.title_path(@conn, :edit, @title) %></span>
+<span><%= link "Back", to: Routes.title_path(@conn, :index) %></span>

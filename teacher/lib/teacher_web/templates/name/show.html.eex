@@ -1,0 +1,38 @@
+<h1>Show Name</h1>
+
+<ul>
+
+  <li>
+    <strong>Nconst:</strong>
+    <%= @name.nconst %>
+  </li>
+
+  <li>
+    <strong>Primaryname:</strong>
+    <%= @name.primaryname %>
+  </li>
+
+  <li>
+    <strong>Birthyear:</strong>
+    <%= @name.birthyear %>
+  </li>
+
+  <li>
+    <strong>Deathyear:</strong>
+    <%= @name.deathyear %>
+  </li>
+
+  <li>
+    <strong>Primaryprofession:</strong>
+    <%= @name.primaryprofession %>
+  </li>
+
+  <li>
+    <strong>Knownfortitles:</strong>
+    <%= @name.knownfortitles %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.name_path(@conn, :edit, @name) %></span>
+<span><%= link "Back", to: Routes.name_path(@conn, :index) %></span>
